@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiran Academic Publications</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<div id="imagePopup">
+  <span id="closeBtn">&times;</span>
+  <img id="popupImg">
+</div>
+<body>
+
+<header class="navbar">
+  <h2 class="logo">Kiran Publications</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#editorial">Editorial</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Gyan Parampara (ज्ञान परंपरा)</h1>
+    <p>International Journal of Commerce, Humanities & Social Sciences</p>
+
+    <div class="badges">
+      <span>Peer Reviewed</span>
+      <span>Fast Publication</span>
+      <span>DOI & ISSN</span>
+    </div>
+
+    <a href="#contact" class="btn-primary">Submit Paper</a>
+    <a href="journal-details.html" class="btn-primary">View Journal Details</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div>500+ Papers</div>
+  <div>100+ Authors</div>
+  <div>50+ Reviewers</div>
+  <div>Global Reach</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>
+    Kiran Academic Publications is dedicated to promoting high-quality research
+    across Commerce, Humanities, and Social Sciences with global visibility.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section light">
+  <h2>Our Services</h2>
+  <div class="grid">
+     <a href="journal.html" class="card">Journal Publication</a>
+    <a href="doi.html" class="card">DOI & ISSN Support</a>
+    <a href="review.html" class="card">Double Blind Peer Review</a>
+    <a href="editing.html" class="card">Editing & Formatting</a>
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section id="editorial" class="section">
+  <h2>Editorial Board</h2>
+
+  <div class="grid">
+
+    
+  </div>
+
+</section>
+<!-- GALLERY -->
+<section id="gallery" class="section light">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="images/1.png">
+    <img src="images/2.png">
+    <img src="images/3.png">
+    <img src="images/4.png">
+    <img src="images/5.png">
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="section">
+  <h2>Our Team</h2>
+  <div class="grid">
+
+  <div class="card profile" onclick="openProfile('images/publisher.jpg','Ritesh Prakash','Director','Founder of Kiran Publications with expertise in academic publishing.')">
+    <img src="images/publisher.jpg">
+    <h3>Ritesh Prakash</h3>
+    <p>Director</p>
+  </div>
+
+  <div class="card profile" onclick="openProfile('images/publisher2.jpg','Vishal Kanodia','Executive Director','Handles strategic growth and operations of publications.')">
+    <img src="images/publisher2.jpg">
+    <h3>Vishal Kanodia</h3>
+    <p>Executive Director</p>
+  </div>
+
+  <div class="card profile" onclick="openProfile('images/publisher3.jpg','Neeraj Kumar Yadav','Operational Director','Manages daily workflow and publication process.')">
+    <img src="images/publisher3.jpg">
+    <h3>Neeraj Kumar Yadav</h3>
+    <p>Operational Director</p>
+  </div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section light">
+  <h2>Contact Us</h2>
+  <p>Email: rpsrivastava305@gmail.com</p>
+
+  <form action="mailto:rpsrivastava305@gmail.com" method="post" enctype="text/plain" class="form">
+
+  <input type="text" name="Name" placeholder="Name" required>
+
+  <input type="email" name="Email" placeholder="Email" required>
+
+  <textarea name="Message" placeholder="Message" required></textarea>
+
+  <button type="submit" class="btn-primary">Send Message</button>
+
+</form>
+</section>
+
+<footer>
+  <p>© 2026 Kiran Academic Publications | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+<div id="profilePopup">
+
+  <div class="popup-content">
+
+    <span id="closeProfile">&times;</span>
+
+    <div class="popup-left">
+      <img id="profileImg">
+    </div>
+
+    <div class="popup-right">
+      <h2 id="profileName"></h2>
+      <h4 id="profileRole"></h4>
+      <p id="profileDesc"></p>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
