@@ -239,3 +239,75 @@ footer {
     width: 100%;
   }
 }
+/* ===== MOBILE NAV FIX ===== */
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Desktop */
+.navbar nav {
+  display: flex;
+  gap: 15px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  .navbar nav {
+    display: none;
+    flex-direction: column;
+    background: #0a2540;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar nav a {
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .navbar nav.active {
+    display: flex;
+  }
+}
+/* ===== HERO MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .badges span {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 4px;
+  }
+
+  .btn-primary {
+    width: 90%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+  }
+}
