@@ -8,9 +8,13 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
+  align-items: center;
+  padding: 15px 20px;
   background: #0a2540;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar a {
@@ -19,9 +23,17 @@ body {
   text-decoration: none;
 }
 
+/* MOBILE MENU ICON */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
 /* HERO */
 .hero {
-  height: 90vh;
+  min-height: 90vh;
+  padding: 40px 20px;
   background: linear-gradient(to right, #0a2540, #1e88e5);
   color: white;
   display: flex;
@@ -34,11 +46,16 @@ body {
   font-size: 40px;
 }
 
+.badges {
+  margin-top: 10px;
+}
+
 .badges span {
   background: rgba(255,255,255,0.2);
-  padding: 8px;
+  padding: 8px 12px;
   margin: 5px;
   border-radius: 20px;
+  display: inline-block;
 }
 
 /* BUTTONS */
@@ -46,14 +63,10 @@ body {
   background: gold;
   padding: 12px 25px;
   display: inline-block;
-  margin-top: 20px;
+  margin: 10px;
   color: black;
   text-decoration: none;
-}
-
-.btn-secondary {
-  padding: 10px 20px;
-  margin-top: 20px;
+  border-radius: 5px;
 }
 
 /* SECTIONS */
@@ -62,6 +75,7 @@ body {
   margin: auto;
   padding: 60px 20px;
 }
+
 .light {
   background: white;
 }
@@ -71,12 +85,13 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
+  justify-items: center;
 }
+
 /* CARDS */
 .card {
-  text-decoration: none;  /* remove underline */
-  color: black;           /* keep text normal */
-  display: block;         /* behave like card */
+  text-decoration: none;
+  color: black;
   background: #ffffff;
   padding: 25px 20px;
   border-radius: 16px;
@@ -86,13 +101,19 @@ body {
   width: 100%;
   max-width: 280px;
 }
+
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
+
 /* PROFILE */
 .profile img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
   border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 /* GALLERY */
@@ -105,6 +126,7 @@ body {
 .gallery img {
   width: 100%;
   border-radius: 10px;
+  cursor: zoom-in;
 }
 
 /* STATS */
@@ -115,23 +137,26 @@ body {
   background: #1e88e5;
   color: white;
   font-weight: bold;
+  flex-wrap: wrap;
 }
 
 /* FORM */
 .form {
   display: flex;
-  flex-direction: column;   /* THIS makes it vertical */
+  flex-direction: column;
   align-items: center;
-  gap: 15px;               /* spacing between fields */
+  gap: 15px;
 }
 
 .form input,
 .form textarea {
   width: 350px;
+  max-width: 90%;
   padding: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
+
 /* FOOTER */
 footer {
   background: #0a2540;
@@ -139,15 +164,8 @@ footer {
   text-align: center;
   padding: 15px;
 }
-.profile img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-/* ===== GALLERY POPUP ===== */
 
+/* ===== GALLERY POPUP ===== */
 #imagePopup {
   display: none;
   position: fixed;
@@ -175,26 +193,20 @@ footer {
   cursor: pointer;
 }
 
-.gallery img {
-  cursor: zoom-in;
-}
-/* ===== TEAM PROFILE POPUP ===== */
-
+/* ===== PROFILE POPUP ===== */
 #profilePopup {
-  display: none;   /* KEEP ONLY THIS */
-
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.8);
-
   justify-content: center;
   align-items: center;
-
   z-index: 999;
 }
+
 .popup-content {
   display: flex;
   background: white;
@@ -204,6 +216,7 @@ footer {
   overflow: hidden;
   position: relative;
 }
+
 .popup-left {
   width: 50%;
 }
@@ -212,8 +225,9 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  min-height: 350px;   /* FIX BLANK IMAGE ISSUE */
+  min-height: 300px;
 }
+
 .popup-right {
   width: 50%;
   padding: 30px;
@@ -221,41 +235,21 @@ footer {
   flex-direction: column;
   justify-content: center;
 }
+
 #closeProfile {
   position: absolute;
-  top: 20px;
-  right: 40px;
+  top: 15px;
+  right: 20px;
   font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-@media (max-width: 768px) {
-  .popup-content {
-    flex-direction: column;
-  }
-
-  .popup-left,
-  .popup-right {
-    width: 100%;
-  }
-}
-/* ===== MOBILE NAV FIX ===== */
-
-.menu-toggle {
-  display: none;
-  font-size: 28px;
+  color: black;
   cursor: pointer;
 }
 
-/* Desktop */
-.navbar nav {
-  display: flex;
-  gap: 15px;
-}
+/* ================= MOBILE FIXES ================= */
 
-/* Mobile */
 @media (max-width: 768px) {
 
+  /* NAVBAR */
   .menu-toggle {
     display: block;
     color: white;
@@ -280,12 +274,10 @@ footer {
   .navbar nav.active {
     display: flex;
   }
-}
-/* ===== HERO MOBILE FIX ===== */
-@media (max-width: 768px) {
 
+  /* HERO */
   .hero h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .hero p {
@@ -301,13 +293,76 @@ footer {
   .badges span {
     font-size: 12px;
     padding: 6px 10px;
-    margin: 4px;
   }
 
   .btn-primary {
     width: 90%;
     max-width: 300px;
-    margin: 10px auto;
-    display: block;
   }
+
+  /* GALLERY */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery img {
+    height: 150px;
+    object-fit: cover;
+  }
+
+  /* POPUP MOBILE */
+  .popup-content {
+    flex-direction: column;
+  }
+
+  .popup-left,
+  .popup-right {
+    width: 100%;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 40px 15px;
+  }
+}
+/* ===== NAVBAR LINKS ===== */
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* MOBILE NAVBAR */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0a2540;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
